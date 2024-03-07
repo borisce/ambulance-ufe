@@ -6,56 +6,45 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface BoceAmbulanceUfe {
+    }
+    interface BoceAmbulanceWlList {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLBoceAmbulanceUfeElement extends Components.BoceAmbulanceUfe, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLBoceAmbulanceUfeElement: {
+        prototype: HTMLBoceAmbulanceUfeElement;
+        new (): HTMLBoceAmbulanceUfeElement;
+    };
+    interface HTMLBoceAmbulanceWlListElement extends Components.BoceAmbulanceWlList, HTMLStencilElement {
+    }
+    var HTMLBoceAmbulanceWlListElement: {
+        prototype: HTMLBoceAmbulanceWlListElement;
+        new (): HTMLBoceAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "boce-ambulance-ufe": HTMLBoceAmbulanceUfeElement;
+        "boce-ambulance-wl-list": HTMLBoceAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface BoceAmbulanceUfe {
+    }
+    interface BoceAmbulanceWlList {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "boce-ambulance-ufe": BoceAmbulanceUfe;
+        "boce-ambulance-wl-list": BoceAmbulanceWlList;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "boce-ambulance-ufe": LocalJSX.BoceAmbulanceUfe & JSXBase.HTMLAttributes<HTMLBoceAmbulanceUfeElement>;
+            "boce-ambulance-wl-list": LocalJSX.BoceAmbulanceWlList & JSXBase.HTMLAttributes<HTMLBoceAmbulanceWlListElement>;
         }
     }
 }
