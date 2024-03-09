@@ -6,24 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BoceAmbulanceWlApp {
+        "basePath": string;
+    }
+    interface BoceAmbulanceWlEditor {
+        "entryId": string;
+    }
     interface BoceAmbulanceWlList {
     }
 }
+export interface BoceAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLBoceAmbulanceWlEditorElement;
+}
+export interface BoceAmbulanceWlListCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLBoceAmbulanceWlListElement;
+}
 declare global {
+    interface HTMLBoceAmbulanceWlAppElement extends Components.BoceAmbulanceWlApp, HTMLStencilElement {
+    }
+    var HTMLBoceAmbulanceWlAppElement: {
+        prototype: HTMLBoceAmbulanceWlAppElement;
+        new (): HTMLBoceAmbulanceWlAppElement;
+    };
+    interface HTMLBoceAmbulanceWlEditorElementEventMap {
+        "editor-closed": string;
+    }
+    interface HTMLBoceAmbulanceWlEditorElement extends Components.BoceAmbulanceWlEditor, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLBoceAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLBoceAmbulanceWlEditorElement, ev: BoceAmbulanceWlEditorCustomEvent<HTMLBoceAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLBoceAmbulanceWlEditorElementEventMap>(type: K, listener: (this: HTMLBoceAmbulanceWlEditorElement, ev: BoceAmbulanceWlEditorCustomEvent<HTMLBoceAmbulanceWlEditorElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLBoceAmbulanceWlEditorElement: {
+        prototype: HTMLBoceAmbulanceWlEditorElement;
+        new (): HTMLBoceAmbulanceWlEditorElement;
+    };
+    interface HTMLBoceAmbulanceWlListElementEventMap {
+        "entry-clicked": string;
+    }
     interface HTMLBoceAmbulanceWlListElement extends Components.BoceAmbulanceWlList, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLBoceAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLBoceAmbulanceWlListElement, ev: BoceAmbulanceWlListCustomEvent<HTMLBoceAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLBoceAmbulanceWlListElementEventMap>(type: K, listener: (this: HTMLBoceAmbulanceWlListElement, ev: BoceAmbulanceWlListCustomEvent<HTMLBoceAmbulanceWlListElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLBoceAmbulanceWlListElement: {
         prototype: HTMLBoceAmbulanceWlListElement;
         new (): HTMLBoceAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
+        "boce-ambulance-wl-app": HTMLBoceAmbulanceWlAppElement;
+        "boce-ambulance-wl-editor": HTMLBoceAmbulanceWlEditorElement;
         "boce-ambulance-wl-list": HTMLBoceAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
+    interface BoceAmbulanceWlApp {
+        "basePath"?: string;
+    }
+    interface BoceAmbulanceWlEditor {
+        "entryId"?: string;
+        "onEditor-closed"?: (event: BoceAmbulanceWlEditorCustomEvent<string>) => void;
+    }
     interface BoceAmbulanceWlList {
+        "onEntry-clicked"?: (event: BoceAmbulanceWlListCustomEvent<string>) => void;
     }
     interface IntrinsicElements {
+        "boce-ambulance-wl-app": BoceAmbulanceWlApp;
+        "boce-ambulance-wl-editor": BoceAmbulanceWlEditor;
         "boce-ambulance-wl-list": BoceAmbulanceWlList;
     }
 }
@@ -31,6 +91,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "boce-ambulance-wl-app": LocalJSX.BoceAmbulanceWlApp & JSXBase.HTMLAttributes<HTMLBoceAmbulanceWlAppElement>;
+            "boce-ambulance-wl-editor": LocalJSX.BoceAmbulanceWlEditor & JSXBase.HTMLAttributes<HTMLBoceAmbulanceWlEditorElement>;
             "boce-ambulance-wl-list": LocalJSX.BoceAmbulanceWlList & JSXBase.HTMLAttributes<HTMLBoceAmbulanceWlListElement>;
         }
     }
