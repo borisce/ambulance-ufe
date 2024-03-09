@@ -6,18 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface BoceAmbulanceUfe {
-    }
     interface BoceAmbulanceWlList {
     }
 }
 declare global {
-    interface HTMLBoceAmbulanceUfeElement extends Components.BoceAmbulanceUfe, HTMLStencilElement {
-    }
-    var HTMLBoceAmbulanceUfeElement: {
-        prototype: HTMLBoceAmbulanceUfeElement;
-        new (): HTMLBoceAmbulanceUfeElement;
-    };
     interface HTMLBoceAmbulanceWlListElement extends Components.BoceAmbulanceWlList, HTMLStencilElement {
     }
     var HTMLBoceAmbulanceWlListElement: {
@@ -25,17 +17,13 @@ declare global {
         new (): HTMLBoceAmbulanceWlListElement;
     };
     interface HTMLElementTagNameMap {
-        "boce-ambulance-ufe": HTMLBoceAmbulanceUfeElement;
         "boce-ambulance-wl-list": HTMLBoceAmbulanceWlListElement;
     }
 }
 declare namespace LocalJSX {
-    interface BoceAmbulanceUfe {
-    }
     interface BoceAmbulanceWlList {
     }
     interface IntrinsicElements {
-        "boce-ambulance-ufe": BoceAmbulanceUfe;
         "boce-ambulance-wl-list": BoceAmbulanceWlList;
     }
 }
@@ -43,7 +31,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "boce-ambulance-ufe": LocalJSX.BoceAmbulanceUfe & JSXBase.HTMLAttributes<HTMLBoceAmbulanceUfeElement>;
             "boce-ambulance-wl-list": LocalJSX.BoceAmbulanceWlList & JSXBase.HTMLAttributes<HTMLBoceAmbulanceWlListElement>;
         }
     }
