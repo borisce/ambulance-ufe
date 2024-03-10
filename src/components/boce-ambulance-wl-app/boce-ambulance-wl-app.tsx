@@ -55,6 +55,7 @@ export class BoceAmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <boce-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </boce-ambulance-wl-editor>
         : <boce-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
