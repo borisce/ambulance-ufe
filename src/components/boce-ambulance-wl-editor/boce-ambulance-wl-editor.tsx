@@ -46,10 +46,10 @@ export class BoceAmbulanceWlEditor {
           this.entry = response.data;
           this.isValid = true;
        } else {
-          this.errorMessage = `Cannot retrieve list of waiting patients: ${response.statusText}`
+          this.errorMessage = `!Cannot retrieve list of waiting patients: ${response.statusText}`
        }
     } catch (err: any) {
-       this.errorMessage = `Cannot retrieve list of waiting patients: ${err.message || "unknown"}`
+       this.errorMessage = `!Cannot retrieve list of waiting patients: ${err.message || "unknown"}`
     }
     return undefined;
   }
@@ -219,10 +219,10 @@ private async updateEntry() {
       if (response.status < 299) {
         this.editorClosed.emit("store")
       } else {
-        this.errorMessage = `Cannot store entry: ${response.statusText}`
+        this.errorMessage = `!Cannot store entry: ${response.statusText}`
       }
     } catch (err: any) {
-      this.errorMessage = `Cannot store entry: ${err.message || "unknown"}`
+      this.errorMessage = `!Cannot store entry: ${err.message || "unknown"}`
     }
 }
 
@@ -233,10 +233,10 @@ private async deleteEntry() {
      if (response.status < 299) {
      this.editorClosed.emit("delete")
      } else {
-     this.errorMessage = `Cannot delete entry: ${response.statusText}`
+     this.errorMessage = `!Cannot delete entry: ${response.statusText}`
      }
   } catch (err: any) {
-     this.errorMessage = `Cannot delete entry: ${err.message || "unknown"}`
+     this.errorMessage = `!Cannot delete entry: ${err.message || "unknown"}`
   }
 }
 

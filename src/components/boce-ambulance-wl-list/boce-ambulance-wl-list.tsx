@@ -22,10 +22,10 @@ export class BoceAmbulanceWlList {
       if (response.status < 299) {
         return response.data;
       } else {
-        this.errorMessage = `Cannot retrieve list of waiting patients: ${response.statusText}`
+        this.errorMessage = `!Cannot retrieve list of waiting patients: ${response.statusText}`
       }
     } catch (err: any) {
-      this.errorMessage = `Cannot retrieve list of waiting patients: ${err.message || "unknown"}`
+      this.errorMessage = `!Cannot retrieve list of waiting patients: ${err.message || "unknown"}`
     }
     return [];
   }
