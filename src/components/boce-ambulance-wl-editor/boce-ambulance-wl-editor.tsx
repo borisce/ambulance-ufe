@@ -86,7 +86,7 @@ export class BoceAmbulanceWlEditor {
     // always have some fallback condition
     return this.conditions || [{
        code: "fallback",
-       value: "Neurčený dôvod návštevy",
+       value: "Neurčený dôvod návštevyy",
        typicalDurationMinutes: 15,
     }];
  }
